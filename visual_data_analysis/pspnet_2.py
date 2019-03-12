@@ -1,3 +1,9 @@
+##code modified from https://github.com/Vladkryvoruchko/PSPNet-Keras-tensorflow
+##tensorflow implementation of original paper https://github.com/hszhao/PSPNet
+
+## Download the weights from https://www.dropbox.com/s/0uxn14y26jcui4v/pspnet50_ade20k.h5?dl=1 and copy in weights/keras
+
+
 #!/usr/bin/env python
 from __future__ import print_function
 import os
