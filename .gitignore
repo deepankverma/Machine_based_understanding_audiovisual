@@ -1,0 +1,55 @@
+# Byte-compiled / optimized / DLL files
+
+*.gz
+*.tgz
+# *.zip
+*.rar
+*.xml
+*.kml
+*.jpg
+*.png
+*.7z
+*.txt
+# *.csv
+*.sgrd
+*.mgrd
+*.sdat
+*.tiff
+*.img
+*.record
+*.JPG
+*.tar
+*.tar.001
+*.tar.002
+*.tar.003
+*.tar.004
+*.tar.005
+*.data-00000-of-00001
+*.pb
+*.cuse
+*.npy
+*.tif
+*.tfrecords
+*.tfrecord
+*.wav
+*.au
+*.ann
+*.mat
+*.ods
+*.pkl
+*.svg
+*.gif
+*.npz
+*.ckpt
+*.npy
+*.pyc
+*.ods
+*.deepank-Precision-T1700
+*.keras
+*.h5
+
+
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
