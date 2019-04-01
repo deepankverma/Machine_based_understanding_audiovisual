@@ -31,8 +31,6 @@ from object_detection.utils import label_map_util    ### CWH: Add object_detecti
 #nas
 
 MODEL_NAME = 'faster_rcnn_nas_coco_2018_01_28'
-MODEL_FILE = MODEL_NAME + '.tar.gz'
-# DOWNLOAD_BASE = 'http://download.tensorflow.org/models/object_detection/'
 
 # Path to frozen detection graph. This is the actual model that is used for the object detection.
 PATH_TO_CKPT = MODEL_NAME + '/frozen_inference_graph.pb'
@@ -80,13 +78,11 @@ if __name__ == "__main__":
 
     os.environ["CUDA_VISIBLE_DEVICES"] = args.id
 
-    db = client.data_analysis_detection
+    db = client.data_analysis_detection   #####change "client.data_analysis_detection" to the name of your database
 
     
 
     collection = db[args.collection] 
-
-    # da_06_06_1
 
 
     images = glob(args.glob_path)
@@ -119,22 +115,15 @@ if __name__ == "__main__":
 
 
             classes = np.squeeze(classes).astype(np.int32)
-            # print("classes",classes)
+
             scores = np.squeeze(scores)
-            # print("scores",scores)
 
             boxes = np.squeeze(boxes)
-            # print("boxes",boxes)
-            # numbers = num
-            # print("numbers",numbers)
+
 
             threshold = 0.20  #CWH: set a minimum score threshold of 50%
             obj_above_thresh = sum(n > threshold for n in scores)
-            # print("obj_above_thresh",obj_above_thresh)
-
-            # print("detected %s objects in %s above a %s score" % ( obj_above_thresh, input_image, threshold))
-            
-            
+          
 
             objects1 = []
             scores1 = []
@@ -147,26 +136,13 @@ if __name__ == "__main__":
               if scores[c] > threshold:
 
                 class_name = category_index[classes[c]]['name']
-                # print(" object %s is a %s - score: %s, location: %s" % 
-                #     (c, class_name, scores[c], boxes[c]))
-                  
-                # print("class_name %s,scores[c] %s" % (class_name,scores[c]))
                 objects1.append(class_name)
                 scores1.append(str(scores[c]))
-
-            # print(results)
-            ## the mobilenet is giving 100 predictions for an image, for which four types of 
-            ## arrays are given as outputs. classes have the number of categories of all
-            ##100 such classes and respectively, all other have scores respective to the 
-            ## numbers of the outputs in serial ordering. hence we can give a threshold to
-            ## produce an output.
 
             count = collections.Counter(objects1)
             count = dict(count)
 
             total_obj = sum(count.values())
-            
-            # print("count",count)
 
             results = sorted([(key,value) for (key,value) in count.items()], reverse = True)
 
