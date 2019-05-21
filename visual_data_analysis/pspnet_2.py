@@ -200,7 +200,7 @@ if __name__ == "__main__":
         print("Could not Connect to MongoDB")
 
 
-    db = client.data_analysis
+    db = client.hlf_details
 
     collection = db[args.collection] 
 
@@ -291,7 +291,9 @@ if __name__ == "__main__":
             # misc.imsave(filename + "_probs" + ext, pm)
             misc.imsave(filename + ext, colored_class_image)
 
-            collection.insert_one({ "img_name":filename.split("/")[-1],
+            filename = filename.split("/")[-1]
+
+            collection.insert_one({ "img_name": filename +  ".jpg",
                                     "segmentation":count,
                                   })
 

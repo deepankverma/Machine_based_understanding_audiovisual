@@ -78,7 +78,7 @@ if __name__ == "__main__":
 
     os.environ["CUDA_VISIBLE_DEVICES"] = args.id
 
-    db = client.data_analysis_detection   #####change "client.data_analysis_detection" to the name of your database
+    db = client.hlf_details   #####change "client.data_analysis_detection" to the name of your database
 
     
 
