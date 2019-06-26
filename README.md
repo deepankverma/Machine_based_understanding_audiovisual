@@ -38,6 +38,10 @@ Both the tasks can be executed in the terminal.
 
 where `--id 1` refers to the use of CPU, replace it with `0` to use GPU (Requires CUDA to be installed and configured with Tensorflow) 
 
+### RESEARCH
+This code is a part of published paper in journal of [Landscape and Urban Planning](https://www.sciencedirect.com/science/article/pii/S0169204618313835).
+
+
 ### Reference Repositories ###
 
  - https://github.com/ideo/LaughDetection
