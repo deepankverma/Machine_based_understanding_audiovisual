@@ -17,6 +17,7 @@ In this project, unbalanced_train_segments and balanced_eval are utilized for mo
    - Evaluation : Evaluation of Model performance with overall accuracy and Kappa metrics.
    - Inference : Model inferences on manually collected audio data.
 
+- `audio_samples_in_figure.zip` consists of sample set of five audio clips.
 
 ## VISUAL CLASSIFICATION ## 
 
